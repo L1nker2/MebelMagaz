@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MebelMagaz")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d76d6213a63bd093c8757448c193728a4749978")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e32d8c295e54dbb8e7c128e7f9759226bb42f57")]
 [assembly: System.Reflection.AssemblyProductAttribute("MebelMagaz")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MebelMagaz")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,9 +2,9 @@
 
 namespace MebelMagaz
 {
-    internal class DataBase:DbContext
+    internal class DataBase : DbContext
     {
-        public static string sqlstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=ПУТЬ ДО 'Mebel.mdf';Integrated Security=True;Connect Timeout=30;Encrypt=True";
+        public static string sqlstr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Mebel.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True";
         public DbSet<Client> Clients { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Service> Services { get; set; }
@@ -15,7 +15,7 @@ namespace MebelMagaz
         }
         public static void AddClient(string fName, string sName, string Phone)
         {
-            using(DataBase db = new())
+            using (DataBase db = new())
             {
                 Client client = new()
                 {
@@ -26,10 +26,10 @@ namespace MebelMagaz
                 db.Clients.Add(client);
                 db.SaveChanges();
             }
-        } 
+        }
         public static void RemoveClient(int Id)
         {
-            using(DataBase db = new())
+            using (DataBase db = new())
             {
                 var client = db.Clients.FirstOrDefault(el => el.Id == Id);
                 db.Clients.Remove(client);
@@ -38,7 +38,7 @@ namespace MebelMagaz
         }
         public static void AddProduct(string name, string desc, int price)
         {
-            using(DataBase db = new())
+            using (DataBase db = new())
             {
                 Product product = new()
                 {
@@ -52,7 +52,7 @@ namespace MebelMagaz
         }
         public static void RemoveProduct(int id)
         {
-            using(DataBase db = new())
+            using (DataBase db = new())
             {
                 Product product = db.Products.FirstOrDefault(el => el.Id == id);
                 db.Products.Remove(product);
@@ -61,7 +61,7 @@ namespace MebelMagaz
         }
         public static void AddService(string name, string desc, int price)
         {
-            using(DataBase db = new())
+            using (DataBase db = new())
             {
                 Service service = new()
                 {
@@ -73,18 +73,18 @@ namespace MebelMagaz
                 db.SaveChanges();
             }
         }
-        public static void RemoveService(int id) 
+        public static void RemoveService(int id)
         {
-            using( DataBase db = new())
+            using (DataBase db = new())
             {
                 Service service = db.Services.FirstOrDefault(el => el.Id == id);
                 db.Services.Remove(service);
                 db.SaveChanges();
-            }       
+            }
         }
         public static void AddContract(int productid, int clientid, int serviceid)
         {
-            using(DataBase db = new())
+            using (DataBase db = new())
             {
                 Contract contract = new()
                 {
@@ -111,7 +111,7 @@ namespace MebelMagaz
         }
         public static void RemoveContract(int id)
         {
-            using(DataBase db = new())
+            using (DataBase db = new())
             {
                 Contract contract = db.Contracts.FirstOrDefault(el => el.Id == id);
                 db.Contracts.Remove(contract);
